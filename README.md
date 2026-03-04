@@ -2,11 +2,21 @@
 
 Este proyecto es un simulador industrial (Gemelo Digital) que integra Tecnologías de Operación (OT) calculando físicas complejas en tiempo real, con un panel de Tecnologías de la Información (IT) para su monitorización y control.
 
-## 📥 Descarga rápida (Para el profesor)
-Para evaluar el proyecto sin instalar Python ni dependencias:
+## 🚀 Cómo ejecutar el software (Guía para el profesor)
+
+### Opción A: Sistema Windows (Recomendado)
+Para evaluar el proyecto rápidamente sin instalar Python ni dependencias:
 1. Ve a la sección **[Releases]** a la derecha de esta página.
 2. Descarga el archivo **`panel_fabrica_pro.exe`**.
-3. Haz doble clic para ejecutar la simulación.
+3. Haz doble clic para ejecutar la simulación directamente.
+
+### Opción B: Sistemas macOS / Linux (Desde el código fuente)
+Si utilizas otro sistema operativo o prefieres auditar el código desde VS Code:
+1. Descarga el código fuente de este repositorio.
+2. Abre la terminal en la carpeta del proyecto e instala las dependencias gráficas necesarias ejecutando:
+   `pip install -r requirements.txt`
+3. Lanza el simulador con el comando:
+   `python panel_fabrica_pro.py`
 
 ---
 
@@ -21,11 +31,11 @@ El sistema ha sido diseñado respetando el ciclo de vida del dato industrial des
 
 ---
 
-## 🚀 Cómo probar el software (Guía de Evaluación)
+## 🛠️ Guía de Evaluación (Paso a Paso)
 
 Sigue estos pasos para auditar todas las funcionalidades del sistema:
 
-1. **Acceso:** Ejecuta el simulador. Lee las normas de seguridad en la pantalla inicial, marca la casilla de aceptación y pulsa "INICIAR SIMULACIÓN".
+1. **Acceso:** Ejecuta el simulador usando la Opción A o B. Lee las normas de seguridad en la pantalla inicial, marca la casilla de aceptación y pulsa "INICIAR SIMULACIÓN".
 2. **Monitorización (Vista Macro):** En el Mapa de Planta, observa el estado nominal de las máquinas y el *Registro de Sucesos* (Datalogger) en la parte inferior.
 3. **Operación (Vista Micro):** Haz clic en "HORNO DE FUNDICIÓN". Activa la "Válvula Principal" para encenderlo.
 4. **Inyección de Fallos:** Activa el interruptor rojo "Romper Tubería Gas". 
