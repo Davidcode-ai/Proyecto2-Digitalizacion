@@ -2,6 +2,14 @@
 
 Este proyecto es un simulador industrial (Gemelo Digital) que integra Tecnologías de Operación (OT) calculando físicas complejas en tiempo real, con un panel de Tecnologías de la Información (IT) para su monitorización y control.
 
+## 📥 Descarga rápida (Para el profesor)
+Para evaluar el proyecto sin instalar Python ni dependencias:
+1. Ve a la sección **[Releases]** a la derecha de esta página.
+2. Descarga el archivo **`panel_fabrica_pro.exe`**.
+3. Haz doble clic para ejecutar la simulación.
+
+---
+
 ## 🔄 Criterio 5b: El Ciclo de Vida del Dato en el Proyecto
 El sistema ha sido diseñado respetando el ciclo de vida del dato industrial desde su origen hasta su almacenamiento:
 
@@ -17,10 +25,9 @@ El sistema ha sido diseñado respetando el ciclo de vida del dato industrial des
 
 Sigue estos pasos para auditar todas las funcionalidades del sistema:
 
-1. **Ejecución:** Abre el archivo `panel_fabrica_pro.exe` (o ejecuta el script `panel_fabrica_pro.py` si dispones de las dependencias `customtkinter` y `matplotlib`).
-2. **Acceso:** Lee las normas de seguridad en la pantalla inicial, marca la casilla de aceptación y pulsa "INICIAR SIMULACIÓN".
-3. **Monitorización (Vista Macro):** En el Mapa de Planta, observa el estado nominal de las máquinas y el *Registro de Sucesos* (Datalogger) en la parte inferior.
-4. **Operación (Vista Micro):** Haz clic en "HORNO DE FUNDICIÓN". Activa la "Válvula Principal" para encenderlo.
-5. **Inyección de Fallos:** Activa el interruptor rojo "Romper Tubería Gas". 
-6. **Respuesta IT/OT:** Observa cómo la gráfica térmica se dispara. El sistema pasará a estado de ALERTA (amarillo) y luego a PELIGRO (rojo). Al superar los 1200ºC, el sistema OT colapsará y el sistema IT bloqueará la pantalla por seguridad.
-7. **Reparación:** Pulsa el botón "PROCEDER A REPARACIÓN". La máquina se reiniciará. Vuelve al mapa y comprueba cómo el *Datalogger* ha registrado la incidencia.
+1. **Acceso:** Ejecuta el simulador. Lee las normas de seguridad en la pantalla inicial, marca la casilla de aceptación y pulsa "INICIAR SIMULACIÓN".
+2. **Monitorización (Vista Macro):** En el Mapa de Planta, observa el estado nominal de las máquinas y el *Registro de Sucesos* (Datalogger) en la parte inferior.
+3. **Operación (Vista Micro):** Haz clic en "HORNO DE FUNDICIÓN". Activa la "Válvula Principal" para encenderlo.
+4. **Inyección de Fallos:** Activa el interruptor rojo "Romper Tubería Gas". 
+5. **Respuesta IT/OT:** Observa cómo la gráfica térmica se dispara. El sistema pasará a estado de ALERTA (amarillo) y luego a PELIGRO (rojo). Al superar los 1200ºC, el sistema OT colapsará y el sistema IT bloqueará la pantalla por seguridad.
+6. **Reparación:** Pulsa el botón "PROCEDER A REPARACIÓN". La máquina se reiniciará. Vuelve al mapa y comprueba cómo el *Datalogger* ha registrado la incidencia.
