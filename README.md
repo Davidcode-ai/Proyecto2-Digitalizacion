@@ -1,22 +1,26 @@
-# Proyecto: Monitorización de Temperatura (Simulación IT/OT)
+# 🏭 SCADA Digital Twin: Integración IT/OT en Tiempo Real
 
-## 📌 Descripción
-Este es mi proyecto para el módulo de Digitalización. El objetivo es simular un entorno industrial básico usando Python.
+Este proyecto es un simulador industrial (Gemelo Digital) que integra Tecnologías de Operación (OT) calculando físicas complejas en tiempo real, con un panel de Tecnologías de la Información (IT) para su monitorización y control.
 
-La idea es demostrar cómo podemos recoger datos de una máquina (OT) y procesarlos en un ordenador (IT) para detectar problemas antes de que ocurran.
+## 🔄 Criterio 5b: El Ciclo de Vida del Dato en el Proyecto
+El sistema ha sido diseñado respetando el ciclo de vida del dato industrial desde su origen hasta su almacenamiento:
 
-## ⚙️ ¿Cómo funciona?
-El proyecto tiene dos partes principales:
+1. **Captura (Generación):** El motor físico en segundo plano genera telemetría (Temperatura, RPM, Presión de Gas, Carga) a 30 FPS simulando el comportamiento de sensores reales en planta.
+2. **Almacenamiento/Transmisión:** Los datos se transmiten mediante memoria compartida (RAM) simulando un bus industrial ultrarrápido, evitando los cuellos de botella de escritura en disco duro.
+3. **Procesamiento:** El sistema IT lee la memoria, evalúa si los valores superan los umbrales seguros predefinidos y calcula los porcentajes de riesgo.
+4. **Visualización:** El dato en crudo se transforma en información útil visualizándose en el dashboard a través de gráficas de tendencias continuas (Matplotlib) y barras de estado (CustomTkinter).
+5. **Acción y Registro (Archivado):** Si el dato indica un estado crítico, el sistema ejecuta una acción de bloqueo de seguridad y archiva el suceso en el *Datalogger* global con la hora exacta para futuras auditorías.
 
-1.  **El Sensor (OT):** Un script de Python que simula ser un sensor de temperatura. Genera datos numéricos continuamente y simula "picos" de calor o averías.
-2.  **El Analista (IT):** Un segundo script que lee esos datos en tiempo real. Usa una lógica sencilla (pequeña IA) para decidir si la temperatura es normal o si hay peligro.
+---
 
-## 🛠️ Tecnologías
-* Lenguaje: **Python**
-* Datos: Generación aleatoria y guardado en **JSON/CSV**
-* Objetivo: Mantenimiento Predictivo
+## 🚀 Cómo probar el software (Guía de Evaluación)
 
-## 🚀 Estado del proyecto
-- [x] Definición de la idea
-- [ ] Programación del script del sensor
-- [ ] Programación de la lógica de alertas
+Sigue estos pasos para auditar todas las funcionalidades del sistema:
+
+1. **Ejecución:** Abre el archivo `panel_fabrica_pro.exe` (o ejecuta el script `panel_fabrica_pro.py` si dispones de las dependencias `customtkinter` y `matplotlib`).
+2. **Acceso:** Lee las normas de seguridad en la pantalla inicial, marca la casilla de aceptación y pulsa "INICIAR SIMULACIÓN".
+3. **Monitorización (Vista Macro):** En el Mapa de Planta, observa el estado nominal de las máquinas y el *Registro de Sucesos* (Datalogger) en la parte inferior.
+4. **Operación (Vista Micro):** Haz clic en "HORNO DE FUNDICIÓN". Activa la "Válvula Principal" para encenderlo.
+5. **Inyección de Fallos:** Activa el interruptor rojo "Romper Tubería Gas". 
+6. **Respuesta IT/OT:** Observa cómo la gráfica térmica se dispara. El sistema pasará a estado de ALERTA (amarillo) y luego a PELIGRO (rojo). Al superar los 1200ºC, el sistema OT colapsará y el sistema IT bloqueará la pantalla por seguridad.
+7. **Reparación:** Pulsa el botón "PROCEDER A REPARACIÓN". La máquina se reiniciará. Vuelve al mapa y comprueba cómo el *Datalogger* ha registrado la incidencia.
